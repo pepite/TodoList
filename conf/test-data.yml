@@ -1,0 +1,12 @@
+Item(t1):
+  name: Buy some milk
+  done: false
+  date: 12-12-2010
+Item(t2):
+  name: Buy some chocolate
+  done: true
+  date: 12-12-2010
+Item(t4):
+  name: Buy some honey
+  done: false
+  date: 12-12-2010

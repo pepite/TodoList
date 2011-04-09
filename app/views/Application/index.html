@@ -1,0 +1,83 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{set 'moreScripts'}
+<script src="@{'/public/javascripts/ajax.js'}" type="text/javascript" charset="utf-8"></script>
+#{/set}
+
+	<header>
+        <div class="logo">33Degree presentation</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+
+    <article class="content">
+        <hgroup>
+            <h1>TODO List</h1>
+            <h5>You can't live without them!</h5>
+        </hgroup>
+        
+        <section>
+            <p>The most important mark up to implement consistently are forms. Allow the CSS to take control and keep the HTML simple and the same throughout your all your projects. </p>
+            <p>Think carefully about the buttons you will need. If can use only the button tag &lt;button&gt; do so, they will give you the most control. Remember that IE6 and 7 have a bug with buttons tags in that they send all the value.</p>
+            <p>Beware of HTML5 input types, browsers are still inconsistent. The date input type doesn't work very well and has been omitted from these patterns. The examples here have been tested and little or no problems.</p>
+            <p><strong>Note:</strong> Client-side validation has not yet been implemented.</p>
+        </section>
+
+        <div class="tabs">
+            <ul>
+                <li><a href="#tabs-0">Tasks</a></li>
+            </ul>
+			    <div id="tabs-0">
+	                <section class="notes">
+	                        #{if flash.error}
+					            <p class="error">${flash.error}</p>
+					        #{/if}
+	                </section>
+	                
+	                #{form @Application.create()}
+	                    <fieldset>
+	                    <div class="buttons">
+	                    	<input type="text" name="name" id="id01" required placeholder="Task name" />
+	                        <button type="submit" id="add_task" class="save" value="Save">Add task</button>
+	                    </div>
+	                    </fieldset>
+	                #{/form}
+	               
+	                <div id="items"> 
+	                
+	                 	<h4>Tasks todo</h4>
+	                	<p>
+	                	<div id="todo_container">
+	                	<ul id="todo">
+	                		#{list items:listNotDone, as:'item'}
+	                		#{form @Application.edit()}
+	                			<input type="hidden" name="item.id" value="${item.id}"/>
+           						<li class="item" rel="${item.id}"><input name="item.done" type="checkbox" class="checker" /><span><h5 class="editer">${item.name}</h5>
+           						<input class="editer" style="display: none" type='text' name="item.name" value='${item.name}'/><button class="editer save" style="display: none" type="submit" value="Save">Save</button>
+           						<button type="submit" class="delete editer" style="display: none" name="what" value="Delete">Delete</button></span></li>
+							#{/form}	            						
+            				#{/list}
+						</ul>
+						</div>
+						</p>
+					
+						<h4>Task completed</h4>
+						<p>
+						 <ul id="done">
+						 	#{list items:listDone, as:'item'}
+	            				<li rel="${item.id}" ><input type="checkbox" checked="true" /><h5>${item.name}<span class="do"></h5></li>
+	            			#{/list}
+	    				</ul>
+	    				</p>
+					</div>
+				</div>
+            </div>
+    </article>
+  
+	

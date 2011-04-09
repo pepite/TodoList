@@ -1,0 +1,36 @@
+#items ul {
+    list-style: none;
+    padding: 0;
+}
+
+#items ul li {
+    font-size: 95%;
+    margin-bottom: 5px;
+}
+
+#done li {
+    color: #888;
+}
+
+
+#todo .do {
+    display: none;
+}
+
+a {
+    color: blue;
+    font-size: 110%;
+}
+
+
+a.strong {
+    background: #FFFD32;
+}
+
+input.editer {
+	width: 150px;
+}
+
+.error {
+	color: red;
+}

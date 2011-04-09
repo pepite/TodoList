@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/vanilla/css/main.css'}">
+         <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+       
+        #{get 'moreStyles' /}
+        <script src="@{'/public/javascripts/modernizr.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery-ui.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/init.js'}" type="text/javascript" charset="utf-8"></script>
+         #{get 'moreScripts' /}
+    </head>
+<body>
+  	#{doLayout /}
+  	
+  	<footer>
+            <p>2011 Lunatech Labs</p>
+    </footer>
+</body>
+
+</html>
